@@ -1,0 +1,275 @@
+{
+  "mtp_depth": 3,
+  "model": "${QWEN38_MODEL}",
+  "checkpoint_type": "unfinetuned base FP8",
+  "vllm_version": "0.32.0",
+  "visible_gpu": "7",
+  "server_args": [
+    "${VLLM_BIN}",
+    "serve",
+    "${QWEN38_MODEL}",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8018",
+    "--served-model-name",
+    "qwen38-base",
+    "--trust-remote-code",
+    "--trust-request-mm-kwargs",
+    "--enable-per-request-metrics",
+    "--per-request-spec-decode-metrics",
+    "summary",
+    "--max-model-len",
+    "4096",
+    "--gpu-memory-utilization",
+    "0.90",
+    "--enforce-eager",
+    "--speculative-config",
+    "{\"method\": \"mtp\", \"num_speculative_tokens\": 3}"
+  ],
+  "warmup_excluded": {
+    "interval_s": [
+      18.0,
+      20.0
+    ],
+    "frame_count": 4,
+    "frame_ids": [
+      456,
+      468,
+      480,
+      492
+    ],
+    "frame_timestamps_s": [
+      18.24,
+      18.72,
+      19.2,
+      19.68
+    ],
+    "frame_sha256": [
+      "df7eb7b29182253afb50f89c547b1f2e7f88bb174c6dcf248ab47871eefaffd8",
+      "63f12545cf3136a7432b625f2d554a6a4a92f6af711fb7a2a733475554dac00d",
+      "cde67969ae341af92b8394bea2d3acae3db93418bb083f1e5cdc446a439c7cac",
+      "0c13ca48d5b403732250166c08d77cea68411c58700b4ea1f6ffad1b00f44422"
+    ],
+    "prompt": "Task instruction: Observe the object placement order, remember it, then place the corresponding objects into the basket in the same order.\nObservation interval: 18.00s through 20.00s.\nEarlier memory: No events recorded yet.\n\nMaintain a chronological text event log. Write only information visibly supported by these images that is new or shows a change. Keep each event concise and in observed order. Describe actions as in progress unless the images show their outcome. Do not include timestamps; the system adds the interval time. If no new event is visible, return an empty string.\nReturn exactly one JSON object and no Markdown: {\"memory_update\": string}",
+    "request_kind": "warmup",
+    "client_ttft_nonempty_text_s": 4.28975852788426,
+    "client_total_s": 4.978055245010182,
+    "client_after_first_text_s": 0.6882967171259224,
+    "completion_tokens": 28,
+    "client_tokens_per_second": 5.624686473310267,
+    "usage": {
+      "prompt_tokens": 774,
+      "total_tokens": 802,
+      "completion_tokens": 28
+    },
+    "server_metrics": {
+      "time_to_first_token_ms": 4164.288498926908,
+      "generation_time_ms": 688.6379970237613,
+      "queue_time_ms": 0.030336901545524597,
+      "mean_itl_ms": 25.505111000880046,
+      "tokens_per_second": 5.769714423526398,
+      "speculative_decoding": {
+        "mean_acceptance_length": 2.7,
+        "draft_acceptance_rate": 0.5666666666666667,
+        "acceptance_histogram": [
+          2,
+          3,
+          1,
+          4
+        ],
+        "num_spec_steps": 10,
+        "num_accepted_draft_tokens": 17,
+        "num_draft_tokens": 30,
+        "num_spec_tokens": 3
+      }
+    },
+    "output": "{\"memory_update\": \"A white robotic arm descends from above toward the center of the table, moving downward and slightly forward.\"}"
+  },
+  "samples": [
+    {
+      "interval_s": [
+        0.0,
+        2.0
+      ],
+      "frame_count": 5,
+      "frame_ids": [
+        0,
+        12,
+        24,
+        36,
+        48
+      ],
+      "frame_timestamps_s": [
+        0.0,
+        0.48,
+        0.96,
+        1.44,
+        1.92
+      ],
+      "frame_sha256": [
+        "dc823cc163a2662a624cc35fc38dcae5a02b9080ffe6dc79ff3013aea0d5083d",
+        "6c3c7ee0d207aa78ea4390c8369eacf3989583a4b81688f7c6ba6e627df81abc",
+        "20ef9d1c1cbad6d1c0ab28051aba691985aed345ead5d8a983253a19db4c47f4",
+        "ac3785f7ee79f5eb4ba0907e1dd4be424c49fa503187d42dd2151408ac0f426d",
+        "958d551840fe0b24c8370134cd4f38cff6e3231cf60fd47593545eb0f74dab6c"
+      ],
+      "prompt": "Task instruction: Observe the object placement order, remember it, then place the corresponding objects into the basket in the same order.\nObservation interval: 0.00s through 2.00s.\nEarlier memory: No events recorded yet.\n\nMaintain a chronological text event log. Write only information visibly supported by these images that is new or shows a change. Keep each event concise and in observed order. Describe actions as in progress unless the images show their outcome. Do not include timestamps; the system adds the interval time. If no new event is visible, return an empty string.\nReturn exactly one JSON object and no Markdown: {\"memory_update\": string}",
+      "request_kind": "measured",
+      "client_ttft_nonempty_text_s": 0.9027750729583204,
+      "client_total_s": 1.5111698571126908,
+      "client_after_first_text_s": 0.6083947841543704,
+      "completion_tokens": 29,
+      "client_tokens_per_second": 19.19043042283063,
+      "usage": {
+        "prompt_tokens": 1078,
+        "total_tokens": 1107,
+        "completion_tokens": 29
+      },
+      "server_metrics": {
+        "time_to_first_token_ms": 858.8396750856191,
+        "generation_time_ms": 608.5640320088714,
+        "queue_time_ms": 0.021729851141572,
+        "mean_itl_ms": 21.734429714602552,
+        "tokens_per_second": 19.76279592302584,
+        "speculative_decoding": {
+          "mean_acceptance_length": 3.4444444444444446,
+          "draft_acceptance_rate": 0.8148148148148148,
+          "acceptance_histogram": [
+            0,
+            2,
+            1,
+            6
+          ],
+          "num_spec_steps": 9,
+          "num_accepted_draft_tokens": 22,
+          "num_draft_tokens": 27,
+          "num_spec_tokens": 3
+        }
+      },
+      "output": "{\"memory_update\": \"The robot arm approaches the blue toy car from above, grasps it, and lifts it off the table.\"}"
+    },
+    {
+      "interval_s": [
+        2.0,
+        4.0
+      ],
+      "frame_count": 4,
+      "frame_ids": [
+        60,
+        72,
+        84,
+        96
+      ],
+      "frame_timestamps_s": [
+        2.4,
+        2.88,
+        3.36,
+        3.84
+      ],
+      "frame_sha256": [
+        "de91c0c9c7c4205e8be6e0820f5784c7098a57a001a7cdd49650a30f6dc6819d",
+        "51f550a1c42ba263d671bbdc678b3e3e33a274305b6a23dcc8ebd08d851b05e6",
+        "1436b444af33e116ad7f8ed0b42d101ec74d961a87cb606e3b95884f15e1c00e",
+        "f206e4b902cc6eb5328fb91fbe6b9e95b313e6535462b230d81765bad8f9e2fb"
+      ],
+      "prompt": "Task instruction: Observe the object placement order, remember it, then place the corresponding objects into the basket in the same order.\nObservation interval: 2.00s through 4.00s.\nEarlier memory: No events recorded yet.\n\nMaintain a chronological text event log. Write only information visibly supported by these images that is new or shows a change. Keep each event concise and in observed order. Describe actions as in progress unless the images show their outcome. Do not include timestamps; the system adds the interval time. If no new event is visible, return an empty string.\nReturn exactly one JSON object and no Markdown: {\"memory_update\": string}",
+      "request_kind": "measured",
+      "client_ttft_nonempty_text_s": 0.7056980349589139,
+      "client_total_s": 1.3503539059311152,
+      "client_after_first_text_s": 0.6446558709722012,
+      "completion_tokens": 27,
+      "client_tokens_per_second": 19.994758323287538,
+      "usage": {
+        "prompt_tokens": 770,
+        "total_tokens": 797,
+        "completion_tokens": 27
+      },
+      "server_metrics": {
+        "time_to_first_token_ms": 671.8169359955937,
+        "generation_time_ms": 645.0724308378994,
+        "queue_time_ms": 0.025017186999320984,
+        "mean_itl_ms": 24.810478109149976,
+        "tokens_per_second": 20.50286127294235,
+        "speculative_decoding": {
+          "mean_acceptance_length": 3.111111111111111,
+          "draft_acceptance_rate": 0.7037037037037037,
+          "acceptance_histogram": [
+            2,
+            1,
+            0,
+            6
+          ],
+          "num_spec_steps": 9,
+          "num_accepted_draft_tokens": 19,
+          "num_draft_tokens": 27,
+          "num_spec_tokens": 3
+        }
+      },
+      "output": "{\"memory_update\": \"The right robotic arm places a remote control into the white basket on the right side of the table.\"}"
+    },
+    {
+      "interval_s": [
+        4.0,
+        6.0
+      ],
+      "frame_count": 4,
+      "frame_ids": [
+        108,
+        120,
+        132,
+        144
+      ],
+      "frame_timestamps_s": [
+        4.32,
+        4.8,
+        5.28,
+        5.76
+      ],
+      "frame_sha256": [
+        "6648cce413d0a19bfb6685dcfe80decdb26768efb6118697740857811ee1842f",
+        "13d48836236322de576fb4a07a8430fbaa23f339897e1b73e17b2e87ff79d45b",
+        "f3316123e1450ab906b170f24d6d1ea10a7d9099a4134c6a35ee3bf308e3ca3a",
+        "0aa1979c64ea2e550d35329e2ca9e24144b85c5c6e0373cd63fad7eaae3324b8"
+      ],
+      "prompt": "Task instruction: Observe the object placement order, remember it, then place the corresponding objects into the basket in the same order.\nObservation interval: 4.00s through 6.00s.\nEarlier memory: No events recorded yet.\n\nMaintain a chronological text event log. Write only information visibly supported by these images that is new or shows a change. Keep each event concise and in observed order. Describe actions as in progress unless the images show their outcome. Do not include timestamps; the system adds the interval time. If no new event is visible, return an empty string.\nReturn exactly one JSON object and no Markdown: {\"memory_update\": string}",
+      "request_kind": "measured",
+      "client_ttft_nonempty_text_s": 0.7057909190189093,
+      "client_total_s": 1.5090713470708579,
+      "client_after_first_text_s": 0.8032804280519485,
+      "completion_tokens": 44,
+      "client_tokens_per_second": 29.15700446198585,
+      "usage": {
+        "prompt_tokens": 770,
+        "total_tokens": 814,
+        "completion_tokens": 44
+      },
+      "server_metrics": {
+        "time_to_first_token_ms": 671.6699299868196,
+        "generation_time_ms": 803.6046260967851,
+        "queue_time_ms": 0.0260290689766407,
+        "mean_itl_ms": 18.68847967666942,
+        "tokens_per_second": 29.824956865524964,
+        "speculative_decoding": {
+          "mean_acceptance_length": 3.75,
+          "draft_acceptance_rate": 0.9166666666666666,
+          "acceptance_histogram": [
+            1,
+            0,
+            0,
+            11
+          ],
+          "num_spec_steps": 12,
+          "num_accepted_draft_tokens": 33,
+          "num_draft_tokens": 36,
+          "num_spec_tokens": 3
+        }
+      },
+      "output": "{\"memory_update\": \"A white robotic arm descends from above, grasps a small green object from the table, lifts it, and places it into the white basket on the right side of the table.\"}"
+    }
+  ],
+  "server_log": "vllm_mtp3.log",
+  "mtp_config_log_excerpt": [
+    "ility_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='summary', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, custom_histogram_buckets=None, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=qwen38-base, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['+quant_fp8', 'all', '+quant_fp8'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'cudagraph_decoder_replay': True, 'decoder_replay_cudagraph_capture_sizes': [], 'decoder_replay_trim_threshold': 768, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_rocm_segmented_attn_autotune=False, enable_cutedsl_warmup=True, enable_jit_warmup=False, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "started_at_utc": "2026-10-28T01:43:59.877811+00:00",
+  "host": "l2.mit.edu",
+  "setup": "single RTX A6000, Qwen3.8-27B-FP8, vLLM 0.32.0, enforce_eager, max_model_len=4096",
+  "input_protocol": "same three 2-second timestamped JPEG-video windows and same prompt for MTP-1 and MTP-3; separate 18-20s video warm-up window per server is excluded",
+  "timer_definition": "client timings start immediately before POST and include HTTP/service overhead; server metrics separately expose TTFT, generation time, queue and ITL",
+  "model_path": "${QWEN38_MODEL}",
+  "source_manifest": "assets/input_manifest.json",
+  "windows": [
+    [
+      0.0,
+      2.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      4.0,
+      6.0
+    ]
+  ],
+  "warmup_window": [
+    18.0,
+    20.0
+  ],
+  "max_tokens": 192,
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "thinking": false
+  },
+  "environment": {
+    "python": "3.12.4",
+    "pytorch": "2.13.0+cu130",
+    "cuda_runtime": "13.0",
+    "nvidia_driver": "580.119.02",
+    "gpu": "NVIDIA RTX A6000",
+    "vllm": "0.32.0",
+    "transformers": "5.19.0",
+    "gpu_index_visible_to_process": "7",
+    "gpu_index_physical": "7"
+  },
+  "gpu_index_visible_to_process": "7"
+}

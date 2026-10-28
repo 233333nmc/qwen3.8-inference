@@ -1,0 +1,149 @@
+{
+  "model": "${QWEN38_MODEL}",
+  "processor": "Qwen3VLProcessor",
+  "transformers_version": "5.19.0",
+  "processor_source": "local checkpoint preprocessor_config.json and video_preprocessor_config.json",
+  "count_definition": "sum(prod(grid_thw) / merge_size^2); exact Qwen image/video placeholder count after processor resize/patchify, not a direct model hidden-state hook",
+  "video_windows": [
+    {
+      "input": "timestamped_video_frames",
+      "interval_s": [
+        0.0,
+        2.0
+      ],
+      "frame_count": 5,
+      "frame_timestamps_s": [
+        0.0,
+        0.48,
+        0.96,
+        1.44,
+        1.92
+      ],
+      "original_frame_sizes_px": [
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ]
+      ],
+      "video_grid_thw": [
+        [
+          3,
+          30,
+          40
+        ]
+      ],
+      "merge_size": 2,
+      "visual_token_count": 900,
+      "vllm_total_prompt_tokens": 1078,
+      "nonvisual_prompt_token_remainder": 178,
+      "output_tokens_mtp1": 29,
+      "output_tokens_mtp3": 29
+    },
+    {
+      "input": "timestamped_video_frames",
+      "interval_s": [
+        2.0,
+        4.0
+      ],
+      "frame_count": 4,
+      "frame_timestamps_s": [
+        2.4,
+        2.88,
+        3.36,
+        3.84
+      ],
+      "original_frame_sizes_px": [
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ]
+      ],
+      "video_grid_thw": [
+        [
+          2,
+          30,
+          40
+        ]
+      ],
+      "merge_size": 2,
+      "visual_token_count": 600,
+      "vllm_total_prompt_tokens": 770,
+      "nonvisual_prompt_token_remainder": 170,
+      "output_tokens_mtp1": 27,
+      "output_tokens_mtp3": 27
+    },
+    {
+      "input": "timestamped_video_frames",
+      "interval_s": [
+        4.0,
+        6.0
+      ],
+      "frame_count": 4,
+      "frame_timestamps_s": [
+        4.32,
+        4.8,
+        5.28,
+        5.76
+      ],
+      "original_frame_sizes_px": [
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ],
+        [
+          640,
+          480
+        ]
+      ],
+      "video_grid_thw": [
+        [
+          2,
+          30,
+          40
+        ]
+      ],
+      "merge_size": 2,
+      "visual_token_count": 600,
+      "vllm_total_prompt_tokens": 770,
+      "nonvisual_prompt_token_remainder": 170,
+      "output_tokens_mtp1": 40,
+      "output_tokens_mtp3": 44
+    }
+  ]
+}

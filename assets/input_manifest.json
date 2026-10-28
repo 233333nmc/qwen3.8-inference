@@ -1,0 +1,271 @@
+{
+  "task": "imitate_sorting_sequence",
+  "model": "gemma-4-12B-it",
+  "demo_clip": "demo_phase_0_20s.mp4",
+  "demo_interval_s": [
+    0.0,
+    20.0
+  ],
+  "source_fps": 25.0,
+  "source_frame_count": 705,
+  "clip_frames": 500,
+  "sampled_frame_count": 42,
+  "sampling_interval_source_frames": 12,
+  "sampling_fps": 2.1,
+  "sampled_frames": [
+    {
+      "index": 0,
+      "frame_id": 0,
+      "time_s": 0.0,
+      "file": "frame_01_t00.00s.jpg"
+    },
+    {
+      "index": 1,
+      "frame_id": 12,
+      "time_s": 0.48,
+      "file": "frame_02_t00.48s.jpg"
+    },
+    {
+      "index": 2,
+      "frame_id": 24,
+      "time_s": 0.96,
+      "file": "frame_03_t00.96s.jpg"
+    },
+    {
+      "index": 3,
+      "frame_id": 36,
+      "time_s": 1.44,
+      "file": "frame_04_t01.44s.jpg"
+    },
+    {
+      "index": 4,
+      "frame_id": 48,
+      "time_s": 1.92,
+      "file": "frame_05_t01.92s.jpg"
+    },
+    {
+      "index": 5,
+      "frame_id": 60,
+      "time_s": 2.4,
+      "file": "frame_06_t02.40s.jpg"
+    },
+    {
+      "index": 6,
+      "frame_id": 72,
+      "time_s": 2.88,
+      "file": "frame_07_t02.88s.jpg"
+    },
+    {
+      "index": 7,
+      "frame_id": 84,
+      "time_s": 3.36,
+      "file": "frame_08_t03.36s.jpg"
+    },
+    {
+      "index": 8,
+      "frame_id": 96,
+      "time_s": 3.84,
+      "file": "frame_09_t03.84s.jpg"
+    },
+    {
+      "index": 9,
+      "frame_id": 108,
+      "time_s": 4.32,
+      "file": "frame_10_t04.32s.jpg"
+    },
+    {
+      "index": 10,
+      "frame_id": 120,
+      "time_s": 4.8,
+      "file": "frame_11_t04.80s.jpg"
+    },
+    {
+      "index": 11,
+      "frame_id": 132,
+      "time_s": 5.28,
+      "file": "frame_12_t05.28s.jpg"
+    },
+    {
+      "index": 12,
+      "frame_id": 144,
+      "time_s": 5.76,
+      "file": "frame_13_t05.76s.jpg"
+    },
+    {
+      "index": 13,
+      "frame_id": 156,
+      "time_s": 6.24,
+      "file": "frame_14_t06.24s.jpg"
+    },
+    {
+      "index": 14,
+      "frame_id": 168,
+      "time_s": 6.72,
+      "file": "frame_15_t06.72s.jpg"
+    },
+    {
+      "index": 15,
+      "frame_id": 180,
+      "time_s": 7.2,
+      "file": "frame_16_t07.20s.jpg"
+    },
+    {
+      "index": 16,
+      "frame_id": 192,
+      "time_s": 7.68,
+      "file": "frame_17_t07.68s.jpg"
+    },
+    {
+      "index": 17,
+      "frame_id": 204,
+      "time_s": 8.16,
+      "file": "frame_18_t08.16s.jpg"
+    },
+    {
+      "index": 18,
+      "frame_id": 216,
+      "time_s": 8.64,
+      "file": "frame_19_t08.64s.jpg"
+    },
+    {
+      "index": 19,
+      "frame_id": 228,
+      "time_s": 9.12,
+      "file": "frame_20_t09.12s.jpg"
+    },
+    {
+      "index": 20,
+      "frame_id": 240,
+      "time_s": 9.6,
+      "file": "frame_21_t09.60s.jpg"
+    },
+    {
+      "index": 21,
+      "frame_id": 252,
+      "time_s": 10.08,
+      "file": "frame_22_t10.08s.jpg"
+    },
+    {
+      "index": 22,
+      "frame_id": 264,
+      "time_s": 10.56,
+      "file": "frame_23_t10.56s.jpg"
+    },
+    {
+      "index": 23,
+      "frame_id": 276,
+      "time_s": 11.04,
+      "file": "frame_24_t11.04s.jpg"
+    },
+    {
+      "index": 24,
+      "frame_id": 288,
+      "time_s": 11.52,
+      "file": "frame_25_t11.52s.jpg"
+    },
+    {
+      "index": 25,
+      "frame_id": 300,
+      "time_s": 12.0,
+      "file": "frame_26_t12.00s.jpg"
+    },
+    {
+      "index": 26,
+      "frame_id": 312,
+      "time_s": 12.48,
+      "file": "frame_27_t12.48s.jpg"
+    },
+    {
+      "index": 27,
+      "frame_id": 324,
+      "time_s": 12.96,
+      "file": "frame_28_t12.96s.jpg"
+    },
+    {
+      "index": 28,
+      "frame_id": 336,
+      "time_s": 13.44,
+      "file": "frame_29_t13.44s.jpg"
+    },
+    {
+      "index": 29,
+      "frame_id": 348,
+      "time_s": 13.92,
+      "file": "frame_30_t13.92s.jpg"
+    },
+    {
+      "index": 30,
+      "frame_id": 360,
+      "time_s": 14.4,
+      "file": "frame_31_t14.40s.jpg"
+    },
+    {
+      "index": 31,
+      "frame_id": 372,
+      "time_s": 14.88,
+      "file": "frame_32_t14.88s.jpg"
+    },
+    {
+      "index": 32,
+      "frame_id": 384,
+      "time_s": 15.36,
+      "file": "frame_33_t15.36s.jpg"
+    },
+    {
+      "index": 33,
+      "frame_id": 396,
+      "time_s": 15.84,
+      "file": "frame_34_t15.84s.jpg"
+    },
+    {
+      "index": 34,
+      "frame_id": 408,
+      "time_s": 16.32,
+      "file": "frame_35_t16.32s.jpg"
+    },
+    {
+      "index": 35,
+      "frame_id": 420,
+      "time_s": 16.8,
+      "file": "frame_36_t16.80s.jpg"
+    },
+    {
+      "index": 36,
+      "frame_id": 432,
+      "time_s": 17.28,
+      "file": "frame_37_t17.28s.jpg"
+    },
+    {
+      "index": 37,
+      "frame_id": 444,
+      "time_s": 17.76,
+      "file": "frame_38_t17.76s.jpg"
+    },
+    {
+      "index": 38,
+      "frame_id": 456,
+      "time_s": 18.24,
+      "file": "frame_39_t18.24s.jpg"
+    },
+    {
+      "index": 39,
+      "frame_id": 468,
+      "time_s": 18.72,
+      "file": "frame_40_t18.72s.jpg"
+    },
+    {
+      "index": 40,
+      "frame_id": 480,
+      "time_s": 19.2,
+      "file": "frame_41_t19.20s.jpg"
+    },
+    {
+      "index": 41,
+      "frame_id": 492,
+      "time_s": 19.68,
+      "file": "frame_42_t19.68s.jpg"
+    }
+  ],
+  "task_instruction": "Observe the object placement order, remember it, then place the corresponding objects into the basket in the same order.",
+  "source_video": "Not included; this repository contains the sampled frames used for the benchmark."
+}
